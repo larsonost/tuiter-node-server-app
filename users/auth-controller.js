@@ -44,7 +44,8 @@ const AuthController = (app) => {
   };
 
   const update = (req, res) => {
-    const username = req.body.username;
+    //const username = req.body.username;
+    const username = req.body.data.username
     const updateInfo = req.body;
     const user = usersDao.findUserByUsername(username);
     if (!user) {
