@@ -4,6 +4,16 @@ const createTuit = async (req, res) => {
     const newTuit = req.body;
     newTuit.likes = 0;
     newTuit.liked = false;
+    newTuit.dislikes = 0;
+    newTuit.disliked = false;
+    newTuit.handle = "NASA";
+    newTuit.image="nasa.jpg";
+    newTuit.time="Now",
+    newTuit.replies=0;
+    newTuit.retuits=0;
+    newTuit.title="NASA Tuit";
+    newTuit.topic="Space";
+    newTuit.username="NASA";
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
@@ -18,7 +28,7 @@ const updateTuit = async (req, res) => {
     const tuitdId = req.params.tid;
     const updates = req.body;
     const status = await tuitsDao
-    .updateTuit(tuitdIdToUpdate, updates);
+    .updateTuit(tuitdId, updates);
 res.json(status);
 }
 

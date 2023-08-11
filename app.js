@@ -7,9 +7,10 @@ import UserController from "./users/users-controller.js"
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import session from "express-session";
 import mongoose from "mongoose";
-//mongoose.connect("mongodb://localhost:27017/tuiter");
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter'
-mongoose.connect(CONNECTION_STRING);
+//mongoose.connect("mongodb://127.0.0.1:27017/tuiter");
+//const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter
+//mongoose.connect(CONNECTION_STRING);
+mongoose.connect("mongodb+srv://larsonost:ronin123@cluster0.82qz611.mongodb.net/tuiter?retryWrites=true&w=majority");
 const app = express()
 app.use(
     cors({
